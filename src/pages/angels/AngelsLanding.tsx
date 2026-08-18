@@ -12,7 +12,7 @@
 // The application/venue forms below still read their own configs from
 // page_key='landing' and submit through AngelsService unchanged.
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Check } from 'lucide-react';
 import { FONT_DISPLAY, FONT_BODY, useAngelsFonts, AngelsFooter, AngelsKeyframes, A, AngelsEyebrow, AngelsButton } from '../../components/angels/AngelsShell';
@@ -31,6 +31,16 @@ export default function AngelsLanding() {
     useAngelsFonts();
     const { t, i18n } = useTranslation('offer');
     const lang = (i18n.language || 'en').split('-')[0];
+    
+    // SEO & Meta Tags
+    useEffect(() => {
+        document.title = t('pageTitle') || 'CAFEPASTE Angels';
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+            metaDesc.setAttribute('content', t('angels.apply.subtitle') || 'CAFEPASTE Angels ağına katılın.');
+        }
+    }, [t, i18n.language]);
+
     // Main sections are shared with the invite page; the two forms below keep
     // their own admin configs under page_key='landing'.
     const { orderedSections, getSection: getInviteSection } = useAngelsContent('invite');
