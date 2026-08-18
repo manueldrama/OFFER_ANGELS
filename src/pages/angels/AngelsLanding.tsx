@@ -29,7 +29,7 @@ const NOISE = `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http:
 
 export default function AngelsLanding() {
     useAngelsFonts();
-    const { t, i18n } = useTranslation('offer');
+    const { t, i18n } = useTranslation('offerpdf');
     const lang = (i18n.language || 'en').split('-')[0];
     
     // SEO & Meta Tags
