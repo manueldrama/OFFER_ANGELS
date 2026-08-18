@@ -71,7 +71,19 @@
     "resourceGuideTitle": "Başlangıç Rehberi",
     "resourceGuideSub": "PDF kullanım kılavuzu",
     "resourceSupportTitle": "Destek Talebi",
-    "resourceSupportSub": "Kurulum yardımı alın"
+    "resourceSupportSub": "Kurulum yardımı alın",
+    "guideHint": "Soldan adım seçin — sağda rehber olarak açılır",
+    "guideHintMobile": "Adıma dokunun — rehber olarak açılır",
+    "backToSteps": "Adımlara dön",
+    "howTo": "Nasıl yapılır",
+    "stepLabel": "Adım",
+    "stepCounter": "{{current}}/{{total}}",
+    "completeAndContinue": "Tamamla ve devam et",
+    "markIncomplete": "Tamamlanmadı olarak işaretle",
+    "skipForNow": "Şimdilik atla",
+    "prevStep": "Önceki adım",
+    "nextStepAria": "Sonraki adım",
+    "stepsCount": "{{done}}/{{total}} adım"
   },
   "common": {
     "all": "Tümü",
@@ -172,7 +184,17 @@
     "statusRetired": "Emekli",
     "statusPassive": "Pasif",
     "statusExpired": "Süresi Dolmuş",
-    "statusCancelled": "İptal Edildi"
+    "statusCancelled": "İptal Edildi",
+    "registeredCount": "{{count}} kayıtlı cihaz",
+    "purchaseDate": "Satın alma",
+    "warrantyEnd": "Garanti bitiş",
+    "warrantyLabel": "Garanti",
+    "warrantyTerms": "Garanti Koşulları",
+    "activeTickets": "{{count}} aktif servis talebi",
+    "serialNote": "Seri numarası etiketi cihazın alt yüzeyindedir. Kayıt sorunları için destek ekibine yazın.",
+    "registeredOn": "Kayıt: {{date}}",
+    "daysLeft": "{{count}} gün kaldı",
+    "monthsLeft": "{{count}} ay kaldı"
   },
   "documents": {
     "title": "Dökümanlar & Rehber",
