@@ -1,0 +1,38 @@
+{
+  "title": "Güvenli Ödeme & Rezervasyon",
+  "description": "Satın alma işleminizi güvenle tamamlayın.",
+  "chooseMethodSubtitle": "Ödeme Yöntemi Seçimi",
+  "completePaymentButton": "Ödemeyi Tamamla ve Siparişi Onayla",
+  "backButton": "Geri Dön",
+  "methods": {
+    "creditCard": "Kredi Kartı",
+    "creditCardSublabel": "12 Taksit İmkanı - Ayda {{installment}} Taksitle",
+    "installment3": "3 Taksit",
+    "installment3Sublabel": "Dengeli plan · Ayda {{amount}}",
+    "installment6": "6 Taksit",
+    "installment6Sublabel": "Esnek vade · Ayda {{amount}}",
+    "bankTransfer": "Havale / EFT",
+    "bankTransferSublabel": "%5 Ek İndirim Avantajı",
+    "prePayment": "%20 Ödeme ile Rezerve Et",
+    "prePaymentSublabel": "{{amount}} Ön Rezervasyon"
+  },
+  "status": {
+    "initiated": "Başlatıldı",
+    "pending": "Beklemede",
+    "success": "Başarılı",
+    "failed": "Başarısız",
+    "refunded": "İade Edildi"
+  },
+  "result": {
+    "successTitle": "Ödemeniz Başarıyla Tamamlandı!",
+    "successDescription": "Siparişiniz onaylanmıştır. Ekibimiz en kısa sürede sizinle iletişime geçecektir.",
+    "errorTitle": "Ödeme Başarısız",
+    "errorDescription": "Ödeme işleminiz tamamlanamadı. Lütfen tekrar deneyin veya farklı bir ödeme yöntemi seçin.",
+    "retryButton": "Tekrar Dene",
+    "backToOffer": "Teklife Dön"
+  },
+  "secure": "Güvenli Ödeme",
+  "secureDescription": "256-bit SSL ile korunan güvenli ödeme altyapısı",
+  "processingPayment": "Ödemeniz işleniyor...",
+  "doNotClose": "Lütfen bu sayfayı kapatmayın."
+}

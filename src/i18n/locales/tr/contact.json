@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Kurumsal İletişim | CAFEPASTE",
+    "description": "CAFEPASTE ile fiyatlandırma, teslimat, kurulum, kurumsal projeler ve etkinlik kullanımı için bir uzmanla görüşün. Otel, restoran ve kurumsal alıcılar için."
+  },
+  "header": {
+    "back": "Ana Sayfa"
+  },
+  "hero": {
+    "eyebrow": "İLETİŞİM",
+    "title": "Bir CafePaste Uzmanıyla Görüşün",
+    "subtitle": "Fiyatlandırma, teslimat, kurulum, kurumsal projeler veya etkinlik kullanımı için size uygun bir zaman seçin.",
+    "cta": "İletişim Formu"
+  },
+  "topic": {
+    "label": "Ne hakkında görüşmek istersiniz?",
+    "sales": {
+      "title": "Satış & Fiyat",
+      "desc": "Ürün detayları, fiyatlandırma, teslimat ve ödeme seçenekleri."
+    },
+    "corporate": {
+      "title": "Kurumsal Proje",
+      "desc": "Oteller, restoranlar, etkinlik ajansları, marka aktivasyonları ve çoklu cihaz talepleri."
+    }
+  },
+  "schedule": {
+    "title": "Tarih & Saat Seçin",
+    "subtitle": "Görüşmeniz için bir zaman dilimi seçin — tüm saatler yerel saat diliminizde.",
+    "selectDate": "Tarih Seçin",
+    "selectTime": "Saat Seçin",
+    "optional": "(opsiyonel)",
+    "today": "Bugün",
+    "tomorrow": "Yarın"
+  },
+  "channel": {
+    "label": "Tercih Edilen İletişim Yöntemi",
+    "phone": { "title": "Telefon Görüşmesi", "desc": "Standart sesli arama" },
+    "whatsapp": { "title": "WhatsApp", "desc": "Hızlı yanıt için uygun" },
+    "email": { "title": "E-posta Yanıtı", "desc": "Kurumsal satın alma ve resmi talepler için ideal" }
+  },
+  "form": {
+    "sectionTitle": "İletişim Bilgileri & Talep",
+    "sectionSubtitle": "Uzmanımızın görüşmeye hazırlanabilmesi için birkaç detay paylaşın.",
+    "fullName": "Ad Soyad",
+    "fullNamePlaceholder": "Ad Soyad",
+    "companyName": "Firma / Mekan Adı",
+    "companyNamePlaceholder": "Örn. The Grand Hotel",
+    "businessType": "İşletme Türü",
+    "businessTypePlaceholder": "İşletme türü seçin",
+    "businessTypes": {
+      "hotel": "Otel",
+      "restaurant": "Restoran",
+      "cafe": "Kafe",
+      "bar": "Bar / Kokteyl",
+      "eventAgency": "Etkinlik Ajansı",
+      "patisserie": "Pastane",
+      "chain": "Zincir / Çoklu Şube",
+      "other": "Diğer"
+    },
+    "countryCity": "Ülke / Şehir",
+    "countryCityPlaceholder": "Örn. Türkiye, İstanbul",
+    "phone": "Telefon / WhatsApp",
+    "phonePlaceholder": "+90 ...",
+    "email": "E-posta",
+    "emailPlaceholder": "ad@firma.com",
+    "message": "Talebinizi anlatın",
+    "messagePlaceholder": "Örnek: Otel lobi barımız için CafePaste'i değerlendiriyoruz; fiyatlandırma, teslimat, kurulum ve sarf malzemeleri hakkında bilgi almak istiyoruz.",
+    "kvkk": "Kişisel verilerimin görüşme amacıyla işlenmesini kabul ediyorum.",
+    "submit": "CafePaste Görüşmesi Talep Et",
+    "submitting": "Gönderiliyor...",
+    "errors": {
+      "required": "Bu alan zorunludur",
+      "fullName": "Lütfen ad ve soyadınızı girin",
+      "company": "Lütfen firma adını girin",
+      "phoneOrEmail": "Telefon veya e-posta girmeniz gerekir",
+      "email": "Geçerli bir e-posta girin",
+      "kvkk": "Devam etmek için onay vermelisiniz",
+      "submit": "Talebiniz gönderilemedi. Lütfen tekrar deneyin."
+    }
+  },
+  "summary": {
+    "label": "TALEBİNİZ"
+  },
+  "success": {
+    "title": "Talebiniz Alındı",
+    "subtitle": "Bir CafePaste uzmanı en geç bir iş günü içinde sizinle iletişime geçecek.",
+    "homeCta": "Ana Sayfaya Dön"
+  },
+  "footnote": "Bir CafePaste uzmanı görüşmenizi bir iş günü içinde onaylayacaktır."
+}

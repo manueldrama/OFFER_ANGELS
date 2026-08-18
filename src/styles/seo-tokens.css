@@ -1,0 +1,136 @@
+/* ============================================================
+   CAFEPASTE SEO — Design Tokens
+   ------------------------------------------------------------
+   Adapted from design-reference/styles/tokens.css. Used by the
+   SEO content section pages (SeoContentPage, SeoIndexPage,
+   SeoResourcesHub) and their bot prerender counterpart. Scoped
+   under `.cp-blog-skin` in seo-base.css / seo-components.css so
+   landing / admin / product pages are not affected.
+
+   Local diff vs design-reference:
+     * --font-display kept as DM Serif Display (per spec/UX call);
+       design-reference forces Inter on display headings but we
+       preserve the editorial serif that the article H1/H2 already
+       use in the live site. See plan PR 1 / Adım 1a.
+     * --red kept at #c8102e (design-reference value, not the
+       previous #C41E2A) — every red surface in SEO pages should
+       resolve via var(--red) after PR 2.
+   ============================================================ */
+
+:root {
+  /* ----- BRAND PALETTE ----- */
+  --ink:           #0c0c0c;     /* black — hero, footer, headings */
+  --ink-soft:      #1a1a1a;     /* dark surface 2 */
+  --ink-line:      #262626;     /* dark borders */
+
+  /* 2026-08-05: krem/bej ailesi landing nötrlerine map'lendi — landing'de
+     krem hiç yok (#FFFFFF/#FAFAFA/#FBFAF9 + #E5E5E5 hairline). Değer
+     değişimi tüm kullanımları tek hamlede landing diline çeker. */
+  --paper:         #ffffff;     /* card / surface */
+  --cream:         #FBFAF9;     /* landing "secondary" band */
+  --cream-soft:    #FAFAFA;     /* landing bg */
+  --cream-deep:    #F5F3F0;     /* landing hover zemini */
+
+  --line:          #E5E5E5;     /* primary border — landing hairline */
+  --line-strong:   #D4D4D4;     /* hover border (landing) */
+  --line-soft:     #F0F0F0;     /* faintest hairline */
+
+  /* Brand red aligned with the main site (LandingPage primitives.P.primary
+     = #C41E2A). The design-reference token file shipped with #c8102e but
+     ana site CTA renkleri zaten #C41E2A — uyumsuzluk yarattığı için
+     hizalandı. Hover ve soft variant'lar ana sitenin tonlarına eşlendi. */
+  --red:           #C41E2A;     /* accent — brand red (matches P.primary) */
+  --red-hot:       #A31822;     /* hover — darker, matches site hover */
+  --red-soft:      #FEF2F2;     /* tinted bg — landing primaryBg */
+
+  /* Metin ailesi: sıcak/kahverengimsi griler → landing soğuk nötrleri */
+  --text-1:        #111111;     /* primary — landing fg */
+  --text-2:        #404040;     /* body — landing body */
+  --text-3:        #737373;     /* muted — landing muted */
+  --text-4:        #A3A3A3;     /* placeholder, disabled */
+
+  --text-on-ink-1: #FAFAFA;     /* primary on dark — landing dili */
+  --text-on-ink-2: #A3A3A3;     /* secondary on dark */
+  --text-on-ink-3: #737373;     /* muted on dark */
+
+  /* ----- SUCCESS / NEUTRALS ----- */
+  --green:         #1f7d4d;
+  --amber:         #b86b15;
+
+  /* ----- TYPE -----
+     --font-display retained as DM Serif Display (was Inter in the
+     design-reference). The live site already uses this serif for
+     article H1 and H2 and the editorial weight tested better than
+     the all-Inter variant. The fallback chain keeps a serif so a
+     missed font load still resolves to Georgia, not a sans.
+  */
+  /* Inter-only type system per design-reference. Earlier iteration kept
+     DM Serif Display for editorial magazine hierarchy but user picked
+     the design-reference look (Inter bold for headlines). The hierarchy
+     now relies entirely on weight (400/500/600/700) and letter-spacing,
+     not a serif/sans contrast. */
+  --font-sans:     "Inter", "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:     "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+}
+
+/* --font-display :root'ta index.css'in (@theme "DM Serif Display") global
+   tanımıyla çakışıyordu — herhangi bir blog route'u yüklenince tüm SPA'nın
+   display fontunu eziyordu. Blog scope'una alındı (2026-08-03). */
+.cp-blog-skin {
+  --font-display:  "Inter", "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+:root {
+
+  /* Type scale */
+  --fs-10: 10px;
+  --fs-11: 11px;
+  --fs-12: 12px;
+  --fs-13: 13px;
+  --fs-14: 14px;
+  --fs-15: 15px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-20: 20px;
+  --fs-24: 24px;
+  --fs-28: 28px;
+  --fs-32: 32px;
+  --fs-40: 40px;
+  --fs-48: 48px;
+  --fs-56: 56px;
+  --fs-72: 72px;
+
+  /* ----- SPACING (4-base) ----- */
+  --s1: 4px;  --s2: 8px;  --s3: 12px;  --s4: 16px;
+  --s5: 20px; --s6: 24px; --s7: 32px;  --s8: 40px;
+  --s9: 48px; --s10: 64px; --s11: 80px; --s12: 96px;
+
+  /* ----- RADIUS — tight, like cafepaste.com ----- */
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 8px;
+  --r-pill: 999px;
+
+  /* ----- LAYOUT ----- */
+  /* 1200px = the site shell's frame (SiteHeader/footer/landing max-w-[1200px]).
+     Blog content used to run 1280/1440 wide — on scaled displays (Windows 125%,
+     ~1536px CSS viewport) it hugged the screen edges and never lined up with
+     the header logo. Aligned to the shell per user feedback (2026-08-03). */
+  --container: 1200px;
+  --container-wide: 1200px;
+  --container-narrow: 880px;
+  --header-h: 64px;
+
+  /* ----- SHADOW — cafepaste.com is fully flat ----- */
+  --shadow-1: none;
+  --shadow-2: none;
+  --shadow-lg: 0 12px 32px -16px rgba(12,12,12,.10);  /* reserved for cmdk overlay only */
+
+  /* ----- MOTION ----- */
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --ease-snap: cubic-bezier(.7,0,.3,1);
+  --d1: 120ms;
+  --d2: 220ms;
+  --d3: 380ms;
+}

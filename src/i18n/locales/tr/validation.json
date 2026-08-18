@@ -1,0 +1,17 @@
+{
+  "required": "Bu alan zorunludur",
+  "invalidEmail": "Geçerli bir e-posta adresi girin",
+  "invalidPhone": "Geçerli bir telefon numarası girin",
+  "minLength": "En az {{min}} karakter olmalıdır",
+  "maxLength": "En fazla {{max}} karakter olabilir",
+  "nameRequired": "Ad Soyad alanı zorunludur",
+  "companyRequired": "Firma adı zorunludur",
+  "businessTypeRequired": "Lütfen işletme türünü seçin",
+  "phoneRequired": "Telefon numarası zorunludur",
+  "fullNameRequired": "Lütfen ad ve soyadınızı giriniz.",
+  "emailRequired": "E-posta adresi zorunludur",
+  "invalidFormat": "Geçersiz format",
+  "selectAtLeastOne": "En az bir seçim yapmalısınız",
+  "quantityMin": "Miktar en az {{min}} olmalıdır",
+  "quantityMax": "Miktar en fazla {{max}} olabilir"
+}

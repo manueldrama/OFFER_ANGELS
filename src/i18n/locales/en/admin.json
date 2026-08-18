@@ -1,0 +1,122 @@
+{
+  "automation": {
+    "title": "Automation Settings",
+    "subtitle": "Configure rules for automatic follow-up messages.",
+    "save": "Save",
+    "saving": "Saving...",
+    "global": {
+      "title": "Global Automation Engine",
+      "description": "Turn the entire follow-up system on or off."
+    },
+    "scenarios": {
+      "title": "Scenario Rules",
+      "offerCreated": {
+        "title": "Send WhatsApp when offer is created",
+        "description": "When a customer creates an offer, the shareable link is automatically delivered via WhatsApp.",
+        "badge": "INSTANT"
+      },
+      "noOpen": {
+        "title": "Unopened Links",
+        "description": "Offer link was delivered but the customer never clicked it within the specified time."
+      },
+      "noOffer": {
+        "title": "No Product Selected",
+        "description": "Link was opened but no device was selected to create an offer."
+      },
+      "noPayment": {
+        "title": "Didn't Reach Payment",
+        "description": "Device was selected (offer created) but the payment page was never started."
+      },
+      "paymentAbandoned": {
+        "title": "Abandoned Payments",
+        "description": "Payment was started (iframe opened) but never completed successfully."
+      }
+    },
+    "delay": "Delay",
+    "hours": "Hours",
+    "template": {
+      "title": "Template Settings",
+      "name": "Template Name (Meta)",
+      "language": "Template Language",
+      "parameters": "Parameters",
+      "addParam": "Add Parameter",
+      "removeParam": "Remove",
+      "selectFromList": "Select from approved templates",
+      "unknownTemplate": "Unknown template — sync from Meta"
+    },
+    "customRules": {
+      "title": "Custom Automation Rules",
+      "addNew": "New Rule",
+      "edit": "Edit",
+      "delete": "Delete",
+      "noRules": "No custom rules yet",
+      "startHint": "Click \"New Rule\" above to start",
+      "form": {
+        "name": "Rule Name",
+        "description": "Description",
+        "triggerEvent": "Trigger Event",
+        "triggerLogic": "Trigger Logic",
+        "negate": "Fire if event DID NOT happen",
+        "positive": "Fire if event HAPPENED"
+      }
+    },
+    "kpi": {
+      "activeScenarios": "Active Scenarios",
+      "todaySent": "Sent Today",
+      "todayFailed": "Failed Today",
+      "pendingTasks": "Pending"
+    },
+    "matrix": {
+      "title": "Scenario × Country Template Matrix",
+      "hint": "Click a cell to assign a country-specific template name.",
+      "default": "(default)",
+      "scenario": "Scenario",
+      "status": "Status"
+    },
+    "activity": {
+      "title": "Recent Activity",
+      "filterAll": "All Statuses",
+      "filterSent": "Sent",
+      "filterFailed": "Failed",
+      "filterPending": "Pending",
+      "emptyState": "No activity yet"
+    },
+    "workingHours": {
+      "title": "Working Hours",
+      "active": "Time Protection Active",
+      "start": "Start",
+      "end": "End"
+    },
+    "retry": {
+      "title": "Retry Policy",
+      "maxRetries": "Max Retries",
+      "delay": "Delay After Failure (Minutes)"
+    }
+  },
+  "whatsappTemplates": {
+    "title": "WhatsApp Templates",
+    "syncFromMeta": "Sync from Meta",
+    "syncing": "Syncing...",
+    "syncSuccess": "Templates synced",
+    "status": {
+      "approved": "Approved",
+      "pending": "Pending",
+      "rejected": "Rejected",
+      "disabled": "Disabled"
+    },
+    "category": "Category",
+    "paramCount": "{{count}} parameter(s)",
+    "preview": "Preview",
+    "usedIn": "Used in automations",
+    "testSend": "Test Send"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "loading": "Loading...",
+    "yes": "Yes",
+    "no": "No"
+  }
+}

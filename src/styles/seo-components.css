@@ -1,0 +1,1380 @@
+/* ============================================================
+   CAFEPASTE SEO — Components
+   ------------------------------------------------------------
+   Selective copy of design-reference/styles/components.css. Only
+   the classes that the SEO content section consumes (page header,
+   article layout, prose, callouts, FAQ, related band, post cards,
+   hub cards, steps, CTA band, dark aside card). All rules nested
+   under `.cp-blog-skin` to keep them off landing / admin / product
+   pages.
+
+   Atlanan modüller (kapsam dışı, kullanılmıyor):
+     • product picker (.picker, .product-card, .product-pill)
+     • compare table (.compare-table)
+     • spec grid (.spec, .spec-grid)
+     • product gallery (.pgallery)
+     • use-case / review cards (.usecase, .review)
+     • dictionary A-Z bar (.dict-search, .az-bar, .term-card)
+     • stat band (.stat-band)
+   ============================================================ */
+
+/* ===========================================================
+   PAGE HEADER — dark band at the top of every SEO page
+   =========================================================== */
+.cp-blog-skin .page-header {
+    background: var(--ink);
+    color: var(--text-on-ink-1);
+    padding: var(--s9) 0 var(--s9);
+    border-bottom: 1px solid var(--ink-line);
+    position: relative;
+    overflow: hidden;
+}
+/* Fotoğraf zemini — landing hero dili: kapak görseli + koyu overlay.
+   z-index 0'da kalır; __inner zaten z-index:2. */
+.cp-blog-skin .page-header__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    /* Landing hero dili: foto NET (blur/soluklaştırma yok); okunabilirlik
+       aşağıdaki gradient overlay'den gelir. */
+    opacity: 1;
+}
+.cp-blog-skin .page-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(12,12,12,0.66) 0%, rgba(12,12,12,0.88) 100%);
+    pointer-events: none;
+}
+.cp-blog-skin .page-header__inner {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+.cp-blog-skin .page-header__inner--left { text-align: left; }
+.cp-blog-skin .page-header .crumbs {
+    color: var(--text-on-ink-3);
+    margin-bottom: var(--s5);
+    justify-content: center;
+}
+.cp-blog-skin .page-header__inner--left .crumbs { justify-content: flex-start; }
+.cp-blog-skin .page-header .crumbs a:hover { color: var(--text-on-ink-1); }
+.cp-blog-skin .page-header .crumbs__current { color: var(--text-on-ink-1); }
+.cp-blog-skin .page-header .h1 {
+    color: var(--text-on-ink-1);
+    margin: 0;
+}
+.cp-blog-skin .page-header .lede {
+    margin: var(--s5) auto 0;
+    color: var(--text-on-ink-2);
+    /* Kullanıcı isteği (2026-08-06): özet dar blok değil, bant boyunca
+       aksın — genişlik sınırını konteyner belirler. */
+    max-width: none;
+}
+.cp-blog-skin .page-header__inner--left .lede { margin-inline: 0; }
+.cp-blog-skin .page-header__meta {
+    margin-top: var(--s7);
+    padding-top: var(--s5);
+    border-top: 1px solid var(--ink-line);
+    display: flex;
+    gap: var(--s5);
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: var(--fs-12);
+    color: var(--text-on-ink-3);
+}
+.cp-blog-skin .page-header__meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.cp-blog-skin .page-header__meta svg {
+    width: 14px;
+    height: 14px;
+    opacity: 0.8;
+}
+.cp-blog-skin .page-header__inner--left .page-header__meta {
+    justify-content: flex-start;
+}
+
+
+/* ===========================================================
+   SECTION HEAD — title + action between content blocks
+   =========================================================== */
+.cp-blog-skin .section-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: var(--s5);
+    flex-wrap: wrap;
+    padding-bottom: var(--s5);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: var(--s7);
+}
+.cp-blog-skin .section-head__title h2 { margin: 0; }
+.cp-blog-skin .section-head__title .eyebrow { margin-bottom: 8px; }
+.cp-blog-skin .section-head__sub {
+    font-size: var(--fs-14);
+    color: var(--text-3);
+    margin: 6px 0 0;
+}
+.cp-blog-skin .section-head__action {
+    font-size: var(--fs-13);
+    font-weight: 600;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid transparent;
+    transition: all var(--d1);
+}
+.cp-blog-skin .section-head__action:hover { color: var(--red); }
+.cp-blog-skin .section-head__action svg { transition: transform var(--d1); }
+.cp-blog-skin .section-head__action:hover svg { transform: translateX(3px); }
+
+/* ===========================================================
+   CARD GRID
+   =========================================================== */
+.cp-blog-skin .card-grid { display: grid; gap: var(--s6); }
+.cp-blog-skin .card-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.cp-blog-skin .card-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.cp-blog-skin .card-grid--4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1000px) {
+    .cp-blog-skin .card-grid--3,
+    .cp-blog-skin .card-grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .cp-blog-skin .card-grid--2,
+    .cp-blog-skin .card-grid--3,
+    .cp-blog-skin .card-grid--4 { grid-template-columns: 1fr; }
+}
+
+/* ===========================================================
+   POST CARD — used in related band, hub grid, list pages
+   =========================================================== */
+.cp-blog-skin .post-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background: var(--paper);
+    border: 1px solid var(--line); /* landing kart dili: kontur, gölge değil */
+    border-radius: var(--r-sm);
+    overflow: hidden;
+    transition: background var(--d2) var(--ease), border-color var(--d2) var(--ease);
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+.cp-blog-skin .post-card:hover {
+    background: var(--cream-deep);
+    border-color: var(--line-strong);
+}
+.cp-blog-skin .post-card__media {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    position: relative;
+}
+.cp-blog-skin .post-card__media .ph { width: 100%; height: 100%; }
+.cp-blog-skin .post-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--d2) var(--ease);
+}
+.cp-blog-skin .post-card:hover .post-card__media img {
+    transform: none; /* landing'de hover zoom yok */
+}
+.cp-blog-skin .post-card__cat {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: var(--fs-11);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 5px 11px;
+    background: var(--red-soft);
+    color: var(--red);
+    border-radius: var(--r-sm);
+}
+.cp-blog-skin .post-card__body {
+    padding: var(--s5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s3);
+    flex: 1;
+}
+.cp-blog-skin .post-card__title {
+    font-size: var(--fs-18);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0;
+    text-wrap: balance;
+    transition: color var(--d1);
+}
+.cp-blog-skin .post-card:hover .post-card__title { color: var(--red); }
+.cp-blog-skin .post-card__excerpt {
+    font-size: var(--fs-14);
+    color: var(--text-3);
+    line-height: 1.55;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.cp-blog-skin .post-card__meta {
+    margin-top: auto;
+    padding-top: var(--s3);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: var(--fs-12);
+    color: var(--text-3);
+}
+.cp-blog-skin .post-card__meta span {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+}
+.cp-blog-skin .post-card__meta svg {
+    width: 12px;
+    height: 12px;
+    opacity: 0.7;
+}
+
+/* Featured / hero card — larger, 2-col split */
+.cp-blog-skin .post-card--featured {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+}
+@media (max-width: 800px) {
+    .cp-blog-skin .post-card--featured { grid-template-columns: 1fr; }
+}
+.cp-blog-skin .post-card--featured .post-card__media {
+    aspect-ratio: auto;
+    min-height: 100%;
+}
+.cp-blog-skin .post-card--featured .post-card__body {
+    padding: var(--s8);
+    justify-content: center;
+    gap: var(--s4);
+}
+.cp-blog-skin .post-card--featured .post-card__title {
+    font-size: clamp(24px, 2.4vw, 32px);
+}
+.cp-blog-skin .post-card--featured .post-card__excerpt {
+    font-size: var(--fs-15);
+    -webkit-line-clamp: 3;
+}
+
+/* ===========================================================
+   PLACEHOLDER MEDIA — geometric, brand-true, no stock photo
+   =========================================================== */
+.cp-blog-skin .ph {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink-soft);
+    overflow: hidden;
+    color: var(--text-on-ink-2);
+}
+.cp-blog-skin .ph::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(135deg,
+        rgba(255, 255, 255, 0.025) 0 1px,
+        transparent 1px 14px);
+}
+.cp-blog-skin .ph::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 38% 38%, rgba(255, 235, 200, 0.35), rgba(140, 90, 40, 0) 56%),
+        radial-gradient(circle at 50% 50%, #6a4520, #1a0e05 78%);
+}
+.cp-blog-skin .ph__label {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+}
+.cp-blog-skin .ph--cream {
+    background: linear-gradient(135deg, #e8dfc7, #d2c5a3);
+    color: var(--text-3);
+}
+.cp-blog-skin .ph--cream::before {
+    background: repeating-linear-gradient(135deg, rgba(12, 12, 12, 0.03) 0 1px, transparent 1px 14px);
+}
+.cp-blog-skin .ph--cream::after {
+    background:
+        radial-gradient(circle at 38% 38%, rgba(255, 235, 200, 0.85), rgba(180, 140, 90, 0) 56%),
+        radial-gradient(circle at 50% 50%, #b4906a, #6f4e2c 70%);
+}
+.cp-blog-skin .ph--cream .ph__label { color: rgba(12, 12, 12, 0.5); }
+.cp-blog-skin .ph--red {
+    background: linear-gradient(135deg, var(--red), #8e0c20);
+}
+.cp-blog-skin .ph--red::after { display: none; }
+.cp-blog-skin .ph--red::before {
+    background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 14px);
+}
+
+/* ===========================================================
+   ARTICLE LAYOUT — tek kolon (760px, ortalı). Sol sticky .docs-toc
+   kolonu kaldırıldı (2026-08-06); İçindekiler artık makale başındaki
+   .cp-blog-mobile-toc akordeon kutusu — tüm genişliklerde görünür.
+   =========================================================== */
+
+/* ===========================================================
+   PROSE — article body (tek kolon editorial ölçü)
+   =========================================================== */
+.cp-blog-skin .prose {
+    font-size: 16px;
+    line-height: 1.72;
+    color: var(--text-2);
+    /* Kullanıcı isteği (2026-08-06): gövde hero metniyle aynı genişlikte —
+       ölçüyü konteyner (container-wide) belirler, 760px sınırı kalktı. */
+    max-width: none;
+}
+.cp-blog-skin .prose > * + * { margin-top: var(--s5); }
+.cp-blog-skin .prose h2 {
+    font-family: var(--font-display);
+    font-size: clamp(21px, 2.1vw, 26px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: var(--s9) 0 var(--s3);
+    text-wrap: balance;
+    scroll-margin-top: 120px;
+}
+.cp-blog-skin .prose h2:first-child { margin-top: 0; }
+.cp-blog-skin .prose h3 {
+    font-size: var(--fs-18);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: var(--s7) 0 var(--s2);
+}
+.cp-blog-skin .prose p { margin: 0; }
+.cp-blog-skin .prose a {
+    color: var(--red);
+    border-bottom: 1px solid var(--red);
+    font-weight: 500;
+    transition: all var(--d1);
+}
+.cp-blog-skin .prose a:hover { border-bottom-color: var(--red-hot); color: var(--red-hot); }
+
+/* Buttons inside the article body must NOT inherit the inline-link treatment.
+   `.cp-blog-skin .prose a` (0,2,1) outranks `.cp-blog-skin .btn` (0,2,0), so a
+   cta_box button was painted red-on-red — an invisible label on every page with
+   an in-article CTA (130 published pages, all 7 languages). These rules restore
+   the button contract; they must stay at least as specific as `.prose a`. */
+.cp-blog-skin .prose a.btn {
+    color: var(--paper);
+    border-bottom: 0;
+    font-weight: 600;
+}
+.cp-blog-skin .prose a.btn:hover {
+    color: var(--paper);
+    border-bottom: 0;
+}
+.cp-blog-skin .prose a.btn--ghost {
+    color: var(--ink);
+}
+.cp-blog-skin .prose a.btn--ghost:hover {
+    color: var(--paper);
+}
+.cp-blog-skin .prose a.btn--on-dark {
+    color: var(--text-on-ink-1);
+}
+.cp-blog-skin .prose strong { color: var(--ink); font-weight: 600; }
+.cp-blog-skin .prose ul,
+.cp-blog-skin .prose ol { margin: 0; padding-left: var(--s5); }
+.cp-blog-skin .prose ul li,
+.cp-blog-skin .prose ol li { margin: 6px 0; }
+.cp-blog-skin .prose ul li::marker { color: var(--red); }
+
+/* Premium "check-badge" list — only the `list` block carries .cp-list, so
+   callout / key_takeaways lists keep their own look. (3. tur) */
+.cp-blog-skin .prose ul.cp-list,
+.cp-blog-skin .prose ol.cp-list {
+    list-style: none;
+    padding-left: 0;
+    margin: var(--s4) 0;
+}
+.cp-blog-skin .prose ul.cp-list li,
+.cp-blog-skin .prose ol.cp-list li {
+    position: relative;
+    padding-left: 38px;
+    margin: 12px 0;
+    line-height: 1.6;
+    color: var(--text-1, var(--ink));
+}
+/* Unordered → çıplak kırmızı ✓ (landing tik dili: daire/glow yok) */
+.cp-blog-skin .prose ul.cp-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0.05em;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+}
+.cp-blog-skin .prose ul.cp-list li::marker { content: none; }
+/* Ordered → red number badge (01, 02, …) */
+.cp-blog-skin .prose ol.cp-list {
+    counter-reset: cp-li;
+}
+.cp-blog-skin .prose ol.cp-list li {
+    counter-increment: cp-li;
+}
+.cp-blog-skin .prose ol.cp-list li::before {
+    content: counter(cp-li, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--red);
+    color: #fff;
+    border-radius: 50%; /* landing adım dairesi — glow'suz */
+    font-size: 12px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+.cp-blog-skin .prose blockquote {
+    margin: var(--s7) 0;
+    padding: var(--s5) var(--s6);
+    border-left: 3px solid var(--red);
+    background: var(--paper);
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+    font-style: italic;
+    font-size: var(--fs-18);
+    color: var(--ink);
+    line-height: 1.55;
+}
+.cp-blog-skin .prose blockquote cite {
+    display: block;
+    margin-top: var(--s3);
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--fs-13);
+    color: var(--text-3);
+    letter-spacing: 0.04em;
+}
+.cp-blog-skin .prose hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: var(--s8) 0;
+}
+.cp-blog-skin .prose img {
+    width: 100%;
+    border-radius: var(--r-sm);
+    margin: var(--s6) 0;
+}
+.cp-blog-skin .prose figure {
+    margin: var(--s7) 0;
+}
+.cp-blog-skin .prose figcaption {
+    margin-top: var(--s2);
+    font-size: var(--fs-13);
+    color: var(--text-3);
+    text-align: center;
+    font-style: italic;
+}
+/* Görsel düzen varyantları (3. tur). normal = içerik genişliği.
+   wide = içeriği iki yana ~10vw taşar; full = kenardan kenara. */
+.cp-blog-skin .prose .cp-img--wide {
+    width: min(100% + 12vw, 1100px);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: none;
+}
+.cp-blog-skin .prose .cp-img--full {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: 100vw;
+    border-radius: 0;
+}
+.cp-blog-skin .prose .cp-img--full img {
+    border-radius: 0;
+}
+@media (max-width: 900px) {
+    .cp-blog-skin .prose .cp-img--wide {
+        width: 100%;
+        margin-left: 0;
+        transform: none;
+    }
+}
+.cp-blog-skin .prose table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--paper);
+    border: 1px solid var(--line); /* landing: kontur, gölge yok */
+    border-radius: var(--r-sm);
+    overflow: hidden;
+    font-size: var(--fs-14);
+    margin: var(--s6) 0;
+}
+.cp-blog-skin .prose table th,
+.cp-blog-skin .prose table td {
+    padding: var(--s4) var(--s5);
+    text-align: left;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: top;
+}
+.cp-blog-skin .prose table th {
+    background: var(--cream-soft);
+    font-weight: 600;
+    color: var(--ink);
+    font-size: var(--fs-13);
+    letter-spacing: 0.02em;
+}
+.cp-blog-skin .prose table tbody tr:last-child td { border-bottom: 0; }
+.cp-blog-skin .prose table tbody tr:hover td { background: rgba(12, 12, 12, 0.02); }
+
+/* Karşılaştırma tablolarında CAFEPASTE kolonu — "önerilen kolon" vurgusu.
+   SeoBlockRenderer, başlığında CAFEPASTE geçen kolonun tüm hücrelerine
+   .is-brand class'ı basar. */
+.cp-blog-skin .prose table th.is-brand {
+    background: var(--ink);
+    color: #fff;
+}
+.cp-blog-skin .prose table td.is-brand {
+    background: var(--cream-soft);
+    font-weight: 600;
+    color: var(--ink);
+}
+.cp-blog-skin .prose table tbody tr:hover td.is-brand { background: var(--cream-deep); }
+
+/* ===========================================================
+   CALLOUT (TL;DR / Tip / Warn) — left-bar accent card
+   =========================================================== */
+.cp-blog-skin .callout {
+    padding: var(--s5) var(--s6);
+    background: var(--paper);
+    /* Landing kart dili: tam çevre 1px kontur; sol kırmızı çubuk ve gölge
+       kalktı — kırmızı yalnız etikette yaşar. */
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    margin: var(--s6) 0;
+}
+.cp-blog-skin .callout__body p {
+    margin: 0;
+    font-size: var(--fs-16);
+    line-height: 1.65;
+    color: var(--text-2);
+}
+.cp-blog-skin .callout__label {
+    display: block;
+    font-size: var(--fs-11);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: var(--s2);
+}
+.cp-blog-skin .callout__icon { display: none; }
+.cp-blog-skin .callout--tip .callout__label { color: var(--green); }
+.cp-blog-skin .callout--warn .callout__label { color: var(--amber); }
+
+/* DOĞRULANMIŞ BİLGİLER (GEO özeti) — koyu düz panel, landing'in tek koyu
+   bandı dili: radius 4, gölgesiz, kenarsız. Etiket beyaz + önünde küçük
+   kırmızı nokta (koyu zeminde #C41E2A metin okunmuyordu, #ff5a6e ise
+   palet dışıydı). */
+.cp-blog-skin .callout--ai {
+    background: #111111;
+    border: 0;
+    border-radius: var(--r-sm);
+}
+.cp-blog-skin .callout--ai .callout__body p {
+    color: rgba(255, 255, 255, 0.86);
+}
+.cp-blog-skin .callout--ai .callout__body ul,
+.cp-blog-skin .callout--ai .callout__body li {
+    color: rgba(255, 255, 255, 0.78);
+}
+.cp-blog-skin .callout--ai .callout__label {
+    color: #FAFAFA;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.cp-blog-skin .callout--ai .callout__label::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+}
+
+/* Özet bloklarının yapılandırılmış satır listesi (ai_answer_summary +
+   key_takeaways) — her madde ince çizgiyle ayrılmış bir "doğrulanmış
+   satır"; çıplak ul'un amatör görünümünü spec-sheet diline çevirir. */
+.cp-blog-skin .prose ul.callout__list {
+    list-style: none;
+    padding: 0;
+    margin: var(--s4) 0 0;
+}
+.cp-blog-skin .prose ul.callout__list li {
+    margin: 0;
+    padding: 10px 0 10px 26px;
+    position: relative;
+    border-top: 1px solid var(--line-soft);
+    font-size: var(--fs-15);
+    line-height: 1.55;
+}
+.cp-blog-skin .prose ul.callout__list li::marker { content: none; }
+/* Açık kutu (TEMEL NOKTALAR): çıplak kırmızı ✓ — landing tik dili */
+.cp-blog-skin .prose ul.callout__list li::before {
+    content: '✓';
+    position: absolute;
+    left: 2px;
+    top: 10px;
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.55;
+}
+/* Koyu panel (DOĞRULANMIŞ BİLGİLER): beyaz hairline satırlar + küçük
+   kırmızı nokta (koyu zeminde ✓ karakteri çamurlaşıyordu) */
+.cp-blog-skin .callout--ai ul.callout__list li {
+    border-top-color: rgba(255, 255, 255, 0.10);
+    color: rgba(255, 255, 255, 0.85);
+}
+.cp-blog-skin .callout--ai ul.callout__list li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    top: 17px;
+}
+
+/* ===========================================================
+   STEPS — how-to / numbered process
+   =========================================================== */
+.cp-blog-skin .steps {
+    list-style: none;
+    padding: 0;
+    margin: var(--s6) 0;
+    counter-reset: step;
+    border-left: 2px solid var(--line);
+    margin-left: 16px;
+}
+.cp-blog-skin .steps li {
+    position: relative;
+    padding: 0 0 var(--s7) var(--s7);
+    counter-increment: step;
+}
+.cp-blog-skin .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: -19px;
+    top: -2px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    /* Landing HowItWorks dili: kırmızı daire + beyaz halka (timeline
+       çizgisinin üstünde oturur) */
+    background: var(--red);
+    color: #fff;
+    box-shadow: 0 0 0 4px var(--cream-soft);
+    display: grid;
+    place-items: center;
+    font-size: var(--fs-14);
+    font-weight: 700;
+}
+.cp-blog-skin .steps li:last-child { padding-bottom: 0; }
+.cp-blog-skin .steps h4 {
+    font-size: var(--fs-18);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 6px;
+}
+.cp-blog-skin .steps p {
+    margin: 0;
+    font-size: var(--fs-15);
+    color: var(--text-2);
+    line-height: 1.6;
+}
+.cp-blog-skin .steps .hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: var(--fs-12);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-3);
+}
+
+/* ===========================================================
+   FAQ ACCORDION
+   =========================================================== */
+.cp-blog-skin .faq {
+    border-top: 1px solid var(--line);
+}
+.cp-blog-skin .faq__item {
+    border-bottom: 1px solid var(--line);
+}
+.cp-blog-skin .faq__q {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--s4);
+    padding: var(--s5) 0;
+    text-align: left;
+    font-size: var(--fs-16);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    transition: color var(--d1);
+}
+.cp-blog-skin .faq__q:hover { color: var(--red); }
+.cp-blog-skin .faq__icon {
+    /* Landing FAQ dili: daire/kutu yok, sade gri ikon; açıkken sadece döner */
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    transition: color var(--d2) var(--ease);
+    color: var(--text-3);
+}
+.cp-blog-skin .faq__icon svg {
+    width: 14px;
+    height: 14px;
+    transition: transform var(--d2);
+}
+.cp-blog-skin .faq__a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--d3) var(--ease);
+}
+.cp-blog-skin .faq__a-inner {
+    padding: 0 0 var(--s5);
+    font-size: var(--fs-15);
+    line-height: 1.65;
+    color: var(--text-2);
+    max-width: 72ch;
+}
+.cp-blog-skin .faq__item.is-open .faq__a { max-height: 800px; }
+.cp-blog-skin .faq__item.is-open .faq__icon { color: var(--ink); }
+.cp-blog-skin .faq__item.is-open .faq__icon svg { transform: rotate(45deg); }
+
+/* ===========================================================
+   CHIP ROW — filter chips at the top of hub/list pages
+   =========================================================== */
+.cp-blog-skin .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+.cp-blog-skin .chip-row .chip {
+    padding: 6px 12px;
+    font-size: var(--fs-13);
+    background: var(--paper);
+}
+.cp-blog-skin .chip-row .chip__count {
+    font-family: var(--font-mono);
+    font-size: var(--fs-11);
+    opacity: 0.6;
+}
+
+/* ===========================================================
+   HUB CARD — topic cluster cards on /resources home
+   =========================================================== */
+.cp-blog-skin .hub-card {
+    position: relative;
+    padding: var(--s7);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s3);
+    min-height: 240px;
+    transition: background var(--d2) var(--ease), border-color var(--d2) var(--ease);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+.cp-blog-skin .hub-card:hover {
+    background: var(--cream-deep);
+    border-color: var(--line-strong);
+}
+.cp-blog-skin .hub-card__num {
+    position: absolute;
+    top: var(--s5);
+    right: var(--s5);
+    font-family: var(--font-mono);
+    font-size: var(--fs-11);
+    color: var(--red);
+    letter-spacing: 0.12em;
+    font-weight: 600;
+}
+.cp-blog-skin .hub-card__icon {
+    width: 44px;
+    height: 44px;
+    background: var(--red-soft); /* landing ikon çipi dili */
+    border-radius: var(--r-sm);
+    display: grid;
+    place-items: center;
+    color: var(--ink);
+    margin-bottom: var(--s2);
+}
+.cp-blog-skin .hub-card:hover .hub-card__icon {
+    background: var(--ink);
+    color: var(--text-on-ink-1);
+}
+.cp-blog-skin .hub-card__title {
+    font-family: var(--font-display);
+    font-size: var(--fs-24);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0;
+}
+.cp-blog-skin .hub-card__desc {
+    font-size: var(--fs-14);
+    color: var(--text-3);
+    line-height: 1.55;
+    margin: 0;
+}
+.cp-blog-skin .hub-card__count {
+    margin-top: auto;
+    font-size: var(--fs-12);
+    color: var(--text-3);
+    display: flex;
+    align-items: center;
+    gap: var(--s3);
+    padding-top: var(--s4);
+    border-top: 1px solid var(--line-soft);
+}
+.cp-blog-skin .hub-card__count strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+/* ===========================================================
+   CTA BAND — bottom of hub/list/article pages
+   =========================================================== */
+.cp-blog-skin .cta-band {
+    /* Landing pre-footer dili: düz #111111 bant, radius 0, gölge yok */
+    background: #111111;
+    color: var(--text-on-ink-1);
+    padding: var(--s10) var(--s8);
+    border-radius: 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--s7);
+}
+.cp-blog-skin .cta-band h3 {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--text-on-ink-1);
+    max-width: 28ch;
+}
+.cp-blog-skin .cta-band p {
+    margin: var(--s2) 0 0;
+    color: var(--text-on-ink-2);
+    max-width: 50ch;
+    font-size: var(--fs-15);
+}
+.cp-blog-skin .cta-band__actions {
+    display: flex;
+    gap: var(--s3);
+    flex-wrap: wrap;
+}
+@media (max-width: 760px) {
+    .cp-blog-skin .cta-band {
+        grid-template-columns: 1fr;
+        padding: var(--s7);
+    }
+}
+
+/* ===========================================================
+   HOME HERO (Blog ana sayfası) — design-ref #screen-home
+   2-col grid: copy + actions sol, 4x stat grid sağ
+   =========================================================== */
+.cp-blog-skin .home-hero {
+    background: var(--ink);
+    color: var(--text-on-ink-1);
+    padding: var(--s11) 0 var(--s10);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--ink-line);
+}
+.cp-blog-skin .home-hero__grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--s10);
+    align-items: center;
+}
+@media (max-width: 1000px) {
+    .cp-blog-skin .home-hero__grid {
+        grid-template-columns: 1fr;
+        gap: var(--s8);
+    }
+}
+.cp-blog-skin .home-hero__copy { max-width: 680px; }
+.cp-blog-skin .home-hero .eyebrow {
+    color: var(--red-hot);
+    margin-bottom: var(--s5);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s3);
+}
+.cp-blog-skin .home-hero .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--red-hot);
+}
+.cp-blog-skin .home-hero .h1 {
+    color: var(--text-on-ink-1);
+    font-size: clamp(40px, 5.5vw, 64px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+    font-family: var(--font-display);
+    margin: 0;
+}
+.cp-blog-skin .home-hero .h1 em {
+    color: var(--red-hot);
+    font-style: italic;
+    font-weight: 600;
+}
+.cp-blog-skin .home-hero .lede {
+    margin-top: var(--s5);
+    color: var(--text-on-ink-2);
+    font-size: var(--fs-18);
+    max-width: 56ch;
+    line-height: 1.55;
+}
+.cp-blog-skin .home-hero__actions {
+    margin-top: var(--s7);
+    display: flex;
+    gap: var(--s3);
+    flex-wrap: wrap;
+}
+.cp-blog-skin .home-hero__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s2);
+    padding: var(--s5);
+    background: var(--ink-soft);
+    border: 1px solid var(--ink-line);
+    border-radius: var(--r-sm); /* landing 4px disiplini */
+}
+.cp-blog-skin .home-hero__stat {
+    padding: var(--s4);
+}
+.cp-blog-skin .home-hero__stat-value {
+    font-family: var(--font-display);
+    font-size: var(--fs-32);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--text-on-ink-1);
+    line-height: 1;
+}
+.cp-blog-skin .home-hero__stat-value em {
+    color: var(--red-hot);
+    font-style: normal;
+}
+.cp-blog-skin .home-hero__stat-label {
+    font-size: var(--fs-12);
+    color: var(--text-on-ink-3);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+/* ===========================================================
+   POST ROW — compact list rows for "Yakınlarda eklenenler"
+   side panel next to the featured post-card
+   =========================================================== */
+.cp-blog-skin .post-row {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: var(--s4);
+    padding: var(--s4) 0;
+    border-bottom: 1px solid var(--line-soft);
+    cursor: pointer;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+.cp-blog-skin .post-row:last-child { border-bottom: 0; }
+.cp-blog-skin .post-row:hover .post-row__title { color: var(--red); }
+.cp-blog-skin .post-row__media {
+    aspect-ratio: 4/3;
+    border-radius: var(--r-sm);
+    overflow: hidden;
+}
+.cp-blog-skin .post-row__media .ph { width: 100%; height: 100%; }
+.cp-blog-skin .post-row__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.cp-blog-skin .post-row__cat {
+    font-size: var(--fs-10);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin: 0;
+}
+.cp-blog-skin .post-row__title {
+    font-size: var(--fs-14);
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+    margin: 4px 0;
+    transition: color var(--d1);
+    letter-spacing: -0.01em;
+}
+.cp-blog-skin .post-row__meta {
+    font-size: var(--fs-11);
+    color: var(--text-3);
+    margin: 0;
+}
+
+/* ===========================================================
+   DICTIONARY (Sözlük) — search + A-Z bar + letter sections
+   Used by /[lang]/glossary (type === 'glossary' branch in
+   SeoIndexPage). Other content types fall back to the generic
+   post-card grid above.
+   =========================================================== */
+.cp-blog-skin .dict-search {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto var(--s7);
+}
+.cp-blog-skin .dict-search__input {
+    width: 100%;
+    height: 56px;
+    padding: 0 var(--s5) 0 56px;
+    font-size: var(--fs-18);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-md);
+    background: var(--paper);
+    transition: all var(--d1);
+    font-family: var(--font-sans);
+    color: var(--text-1);
+}
+.cp-blog-skin .dict-search__input:focus {
+    outline: none;
+    border-color: var(--ink);
+    box-shadow: 0 0 0 4px rgba(12, 12, 12, 0.06);
+}
+.cp-blog-skin .dict-search__input::placeholder { color: var(--text-4); }
+.cp-blog-skin .dict-search__icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-3);
+    pointer-events: none;
+}
+
+.cp-blog-skin .az-bar {
+    display: flex;
+    gap: 2px;
+    flex-wrap: wrap;
+    padding: var(--s2);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    justify-content: center;
+}
+.cp-blog-skin .az-bar__letter {
+    width: auto;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-13);
+    font-weight: 600;
+    color: var(--text-2);
+    border-radius: var(--r-xs);
+    transition: all var(--d1);
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    font-family: var(--font-sans);
+}
+.cp-blog-skin .az-bar__letter:hover {
+    background: var(--cream);
+    color: var(--ink);
+}
+.cp-blog-skin .az-bar__letter.is-active {
+    background: var(--ink);
+    color: var(--text-on-ink-1);
+}
+.cp-blog-skin .az-bar__letter.is-empty {
+    color: var(--text-4);
+    cursor: default;
+    pointer-events: none;
+}
+
+.cp-blog-skin .gloss-section {
+    padding: var(--s7) 0;
+    border-top: 1px solid var(--line);
+}
+.cp-blog-skin .gloss-section:first-child { border-top: 0; padding-top: 0; }
+.cp-blog-skin .gloss-section__head {
+    display: flex;
+    align-items: baseline;
+    gap: var(--s5);
+    margin-bottom: var(--s5);
+}
+.cp-blog-skin .gloss-section__letter {
+    font-family: var(--font-display);
+    font-size: var(--fs-56);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    line-height: 1;
+}
+.cp-blog-skin .gloss-section__letter sup {
+    font-size: var(--fs-14);
+    font-weight: 500;
+    color: var(--text-3);
+    margin-left: 8px;
+    vertical-align: 50%;
+    font-family: var(--font-sans);
+}
+
+.cp-blog-skin .term-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s2);
+    padding: var(--s5);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    transition: background var(--d2) var(--ease), border-color var(--d2) var(--ease);
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+.cp-blog-skin .term-card:hover {
+    background: var(--cream-deep);
+    border-color: var(--line-strong);
+}
+.cp-blog-skin .term-card__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--s3);
+}
+.cp-blog-skin .term-card__term {
+    font-family: var(--font-display);
+    font-size: var(--fs-20);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 0;
+}
+.cp-blog-skin .term-card__ipa {
+    font-family: var(--font-mono);
+    font-size: var(--fs-12);
+    color: var(--text-3);
+    font-weight: 500;
+}
+.cp-blog-skin .term-card__def {
+    font-size: var(--fs-14);
+    color: var(--text-2);
+    line-height: 1.55;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.cp-blog-skin .term-card__tags {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line-soft);
+}
+.cp-blog-skin .term-tag {
+    font-size: var(--fs-11);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 3px 10px;
+    background: var(--red-soft);
+    border: 0;
+    color: var(--red);
+    border-radius: var(--r-sm);
+}
+
+/* ===========================================================
+   RELATED BAND — strip at bottom of detail pages
+   =========================================================== */
+.cp-blog-skin .related-band {
+    background: var(--cream-soft);
+    border-top: 1px solid var(--line);
+    padding: var(--s10) 0;
+    margin-top: var(--s9);
+}
+
+/* ===========================================================
+   RICH CMS BLOCKS (Faz 4) — gallery / video / button / divider
+   / accordion / code / product-card. Scoped to .cp-blog-skin so
+   they only style the editorial article body.
+   =========================================================== */
+.cp-blog-skin .cp-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--s3);
+    margin: var(--s7) 0;
+}
+.cp-blog-skin .cp-gallery figure { margin: 0; }
+.cp-blog-skin .cp-gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--r-md);
+    border: 1px solid var(--line);
+}
+.cp-blog-skin .cp-video { margin: var(--s7) 0; }
+.cp-blog-skin .cp-video__frame {
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: var(--r-sm);
+    overflow: hidden;
+    background: #000;
+}
+.cp-blog-skin .cp-video__frame iframe,
+.cp-blog-skin .cp-video__frame video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.cp-blog-skin .cp-button-row { margin: var(--s6) 0; }
+.cp-blog-skin .cp-divider {
+    margin: var(--s8) 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+}
+.cp-blog-skin .cp-accordion { margin: var(--s7) 0; }
+.cp-blog-skin .cp-accordion details {
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    padding: var(--s4) var(--s5);
+    margin-bottom: var(--s3);
+    background: var(--paper);
+}
+.cp-blog-skin .cp-accordion summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--ink);
+    list-style: none;
+}
+.cp-blog-skin .cp-accordion summary::-webkit-details-marker { display: none; }
+.cp-blog-skin .cp-accordion summary::after {
+    content: '+';
+    float: right;
+    color: var(--red);
+    font-weight: 400;
+}
+.cp-blog-skin .cp-accordion details[open] summary::after { content: '–'; }
+.cp-blog-skin .cp-accordion__body {
+    margin-top: var(--s3);
+    line-height: 1.7;
+    color: var(--text-2);
+}
+.cp-blog-skin .cp-code {
+    margin: var(--s6) 0;
+    padding: var(--s5) var(--s6);
+    background: #0c0c0c;
+    color: #e5e5e5;
+    border-radius: var(--r-md);
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: var(--fs-13);
+    line-height: 1.6;
+}
+.cp-blog-skin .cp-code code { font-family: inherit; }
+.cp-blog-skin .cp-product-card {
+    display: flex;
+    gap: var(--s5);
+    align-items: center;
+    margin: var(--s8) 0;
+    padding: var(--s5) var(--s6);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+}
+.cp-blog-skin .cp-product-card__media { flex-shrink: 0; width: 128px; }
+.cp-blog-skin .cp-product-card__media img { width: 100%; border-radius: var(--r-md); }
+.cp-blog-skin .cp-product-card__body { flex: 1; }
+.cp-blog-skin .cp-product-card__eyebrow {
+    margin: 0;
+    font-size: var(--fs-11);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+}
+.cp-blog-skin .cp-product-card__desc { margin: 6px 0 0; color: var(--text-2); }
+.cp-blog-skin .cp-product-card__price {
+    margin: 6px 0 0;
+    font-weight: 700;
+    color: var(--red);
+}
+@media (max-width: 640px) {
+    .cp-blog-skin .cp-product-card { flex-direction: column; align-items: stretch; }
+    .cp-blog-skin .cp-product-card__media { width: 100%; }
+}

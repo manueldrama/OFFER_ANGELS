@@ -1,0 +1,111 @@
+{
+  "loading": "Yükleniyor…",
+  "brand": "CAFEPASTE",
+  "subtitle": "Online Mülakat",
+
+  "error": {
+    "generic": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+    "title": "Bağlantı açılamadı",
+    "questionUnavailable": "Bu soru şu anda görüntülenemiyor. Yenilemeyi deneyin ya da verdiğiniz cevaplarla devam edin.",
+    "retry": "Yenile",
+    "continueAnyway": "Cevaplarımla devam et"
+  },
+
+  "intro": {
+    "badge": "Davetiye onaylandı",
+    "greeting": "Merhaba {{name}},",
+    "title": "Online mülakatınıza hoş geldiniz",
+    "lead": "Aşağıdaki soruları kendi cihazınızdan, kendi zamanınızda cevaplayacaksınız. Başlamadan önce kuralları okuyun — bu mülakat gerçek bir görüşme gibi işler.",
+    "questionCount": "{{count}} soru",
+    "estimatedTime": "yaklaşık {{minutes}} dakika",
+    "estimatedData": "yaklaşık {{mb}} MB veri",
+    "statQuestions": "Soru",
+    "statDuration": "Süre",
+    "statData": "Veri",
+    "statDurationValue": "~{{minutes}} dk",
+    "statDataValue": "~{{mb}} MB",
+    "consentTitle": "Onaylar",
+    "consentHint": "Devam etmek için iki onayı da işaretleyin.",
+    "rulesTitle": "Başlamadan önce",
+    "rulesContinue": "Anladım, Devam Et",
+    "ruleOnce": "Her soruyu YALNIZCA BİR KEZ cevaplayabilirsiniz. Tekrar çekme hakkınız yoktur.",
+    "ruleNoPause": "Kayıt başladıktan sonra duraklatamaz veya durduramazsınız; süre dolunca kayıt kendiliğinden biter.",
+    "ruleNoPreview": "Çektiğiniz kayıt size geri oynatılmaz.",
+    "ruleSequential": "Sorular sırayla açılır; sonraki soruları önceden göremezsiniz.",
+    "ruleReady": "Her soruyu okuduktan sonra hazır olduğunuzda kaydı kendiniz başlatırsınız. Düşünme süreniz kısıtlı değildir.",
+    "ruleTabSwitch": "Kayıt sırasında sekmeyi değiştirirseniz kayıt o anda biter ve gönderilir.",
+    "wifiWarning": "Bu mülakat yaklaşık {{mb}} MB veri kullanacak. Mümkünse Wi-Fi bağlantısı kullanın.",
+    "consentData": "İşe alım süreci kapsamında kişisel verilerimin işlenmesini kabul ediyorum.",
+    "consentRecord": "Video ve ses kaydımın alınmasını, yalnızca İK ekibi tarafından izlenmesini ve {{days}} gün sonra silinmesini kabul ediyorum. Kayıtlarım biyometrik tanıma amacıyla KULLANILMAZ; dilediğim zaman silinmesini talep edebilirim.",
+    "start": "Mülakata Başla",
+    "consentRequired": "Devam etmek için her iki onayı da işaretleyin."
+  },
+
+  "device": {
+    "title": "Kamera ve mikrofon kontrolü",
+    "lead": "Tek çekim hakkınız olduğu için, gerçek soruya geçmeden önce kendinizi görüp duymanız gerekiyor.",
+    "allow": "Kamera ve Mikrofona İzin Ver",
+    "requesting": "İzin bekleniyor…",
+    "micLabel": "Mikrofon seviyesi",
+    "micHint": "Konuşun — çubuğun hareket ettiğini görmelisiniz.",
+    "testRecord": "5 Saniyelik Deneme Çek",
+    "testRecording": "Deneme kaydı sürüyor…",
+    "testPlay": "Denemenizi izleyin",
+    "testAgain": "Tekrar Dene",
+    "continue": "Her Şey Yolunda, Devam Et",
+    "unsupported": "Tarayıcınız tarayıcı içi kaydı desteklemiyor. Sorularda cihazınızın kendi kamerası açılacak.",
+    "errorPermission": "Kamera/mikrofon izni verilmedi. Tarayıcı adres çubuğundaki kamera simgesinden izin verip tekrar deneyin.",
+    "errorNoDevice": "Kamera veya mikrofon bulunamadı. Cihazınızı kontrol edip tekrar deneyin.",
+    "errorBusy": "Kamera başka bir uygulama tarafından kullanılıyor. Diğer uygulamaları kapatıp tekrar deneyin.",
+    "errorUnknown": "Kamera açılamadı. Lütfen tekrar deneyin."
+  },
+
+  "question": {
+    "counter": "Soru {{current}} / {{total}}",
+    "required": "Zorunlu",
+    "optional": "İsteğe bağlı",
+    "promptLanguageNotice": "Bu soru {{language}} dilinde gösteriliyor.",
+    "maxDuration": "En fazla {{seconds}} saniye",
+    "thinkFree": "Düşünme süreniz kısıtlı değil.",
+    "thinkLeft": "Düşünme süresi: {{time}}",
+    "ready": "Hazırım, Kaydı Başlat",
+    "readyHint": "Butona bastığınızda 3 saniye içinde kayıt başlar ve durdurulamaz.",
+    "countdown": "Kayıt başlıyor…",
+    "recording": "KAYIT",
+    "remaining": "{{time}} kaldı",
+    "finish": "Bitirdim, Sonraki Soru",
+    "finishHint": "Erken bitirirseniz cevabınız kilitlenir.",
+    "uploading": "Cevabınız gönderiliyor… %{{percent}}",
+    "uploadingHint": "Lütfen sayfayı kapatmayın. Kaydınız henüz kaydedilmedi.",
+    "uploadFailed": "Cevabınız gönderilemedi. Kaydınız hâlâ elimizde — tekrar deneyebilirsiniz.",
+    "retryUpload": "Tekrar Gönder",
+    "saved": "Cevabınız kaydedildi",
+    "locked": "Bu soru cevaplandı",
+    "next": "Sonraki Soru",
+    "textPlaceholder": "Cevabınızı buraya yazın…",
+    "chars": "{{count}} / {{max}} karakter",
+    "saveText": "Kaydet ve Devam Et",
+    "saving": "Kaydediliyor…",
+    "fallbackTitle": "Cihazınızın kamerasıyla çekin",
+    "fallbackHint": "Tarayıcınız içeriden kayıt desteklemiyor. Butona basınca telefonunuzun kamera uygulaması açılır; en fazla {{seconds}} saniye çekin.",
+    "fallbackPick": "Kamerayı Aç",
+    "tooLarge": "Kayıt çok büyük ({{size}}). Lütfen daha kısa çekin.",
+    "emptyRecording": "Kayıt boş çıktı. Lütfen İK ekibiyle iletişime geçin."
+  },
+
+  "submit": {
+    "title": "Tüm soruları cevapladınız",
+    "lead": "Cevaplarınızı göndermeye hazırsınız. Gönderdikten sonra değişiklik yapamazsınız.",
+    "button": "Mülakatı Gönder",
+    "sending": "Gönderiliyor…",
+    "missing": "Tamamlanmamış sorular var."
+  },
+
+  "done": {
+    "title": "Mülakatınız tamamlandı",
+    "lead": "Cevaplarınız İK ekibimize ulaştı. Değerlendirme sonrasında sizinle iletişime geçeceğiz.",
+    "close": "Bu sayfayı kapatabilirsiniz."
+  },
+
+  "beforeUnload": "Kaydınız henüz gönderilmedi. Sayfayı kapatırsanız bu cevap kaybolur ve yeniden çekemezsiniz."
+}

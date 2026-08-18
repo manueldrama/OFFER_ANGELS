@@ -1,0 +1,28 @@
+{
+  "pdf": {
+    "fileNamePrefix": "cafepaste-offerta",
+    "documentLabel": "Documento di offerta",
+    "tagline": "Soluzioni professionali per bevande",
+    "verifiedOffer": "Offerta esclusiva verificata",
+    "offerInfoTitle": "Informazioni sull'offerta",
+    "customerTitle": "Cliente",
+    "dateLabel": "Data",
+    "validityLabel": "Valido fino al",
+    "documentNoLabel": "N. documento",
+    "detailsTitle": "Dettagli dell'offerta",
+    "colProduct": "Prodotto / Servizio",
+    "colQty": "Qtà",
+    "colUnitPrice": "Prezzo unitario",
+    "colAmount": "Importo",
+    "subtotalLabel": "Subtotale",
+    "vatLabel": "IVA (%{{vatRate}})",
+    "grandTotalLabel": "Totale generale",
+    "ctaTitle": "Visualizza la tua offerta online",
+    "ctaSubtitle": "Per prezzi aggiornati, validità e conferma dell'ordine",
+    "ctaButton": "Apri offerta",
+    "benefitsTitle": "Vantaggi del pagamento anticipato",
+    "benefit1": "Il tuo vantaggio di prezzo è garantito",
+    "benefit2": "Viene avviata la pianificazione della consegna",
+    "benefit3": "Il supporto del tuo consulente commerciale continua"
+  }
+}

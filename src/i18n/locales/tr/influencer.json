@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Influencer İşbirliği Programı | CAFEPASTE",
+    "description": "CAFEPASTE Influencer Programı ile içerik üreticileri için organik işbirlikleri, premium ürün hediyeleri ve ücretli içerik fırsatları."
+  },
+  "header": {
+    "back": "Ana Sayfa"
+  },
+  "hero": {
+    "eyebrow": "INFLUENCER PROGRAMI",
+    "title": "İçeriğine Değer Katan Bir Marka Ortaklığı",
+    "subtitle": "CAFEPASTE içerik üreticileriyle uzun vadeli, gerçek ve anlamlı işbirlikleri kuruyor. Premium Beverage Art Creator teknolojimizle yaratıcı içerikler üretmek için bize katıl.",
+    "cta": "Hemen Başvur",
+    "stats": {
+      "creators": "İçerik Üreticisi",
+      "reach": "Toplam Erişim",
+      "campaigns": "Yıllık Kampanya"
+    }
+  },
+  "benefits": {
+    "title": "Neden CAFEPASTE?",
+    "subtitle": "Sadece bir ürün göndermiyoruz, gerçek bir ortaklık kuruyoruz.",
+    "items": {
+      "product": {
+        "title": "Premium Ürün Hediye",
+        "desc": "CAFEPASTE İçecek Art Makinesi'ni ve sarflarını ücretsiz kullanmana fırsat veriyoruz."
+      },
+      "paid": {
+        "title": "Ücretli İçerik Fırsatları",
+        "desc": "Uygun profillere kampanya bazlı bütçeli içerik anlaşmaları sunuyoruz."
+      },
+      "ambassador": {
+        "title": "Uzun Vadeli Ambassador",
+        "desc": "Markayla doğal bir uyum yakalayan üreticilerle elçilik programına geçiyoruz."
+      },
+      "support": {
+        "title": "İçerik Üretim Desteği",
+        "desc": "Çekim mekânı, ürün eğitimi ve yaratıcı brief desteği sağlıyoruz."
+      }
+    }
+  },
+  "process": {
+    "title": "Süreç Nasıl İşliyor?",
+    "subtitle": "Şeffaf, hızlı ve net bir süreç.",
+    "steps": {
+      "apply": {
+        "title": "Başvur",
+        "desc": "Aşağıdaki formu doldur, sosyal medyanı ve fikirlerini paylaş."
+      },
+      "review": {
+        "title": "İncele",
+        "desc": "Ekibimiz 5 iş günü içinde başvurunu inceler ve seninle iletişime geçer."
+      },
+      "approve": {
+        "title": "Onayla",
+        "desc": "Uyum sağladığımız profillerle işbirliğinin detaylarını netleştiririz."
+      },
+      "create": {
+        "title": "Üret",
+        "desc": "Ürünü deneyimle, içerikleri planla ve yayınla."
+      }
+    }
+  },
+  "form": {
+    "title": "Başvuru Formu",
+    "subtitle": "Tüm gerekli alanları doldur, en geç 5 iş günü içinde dönüş yapacağız.",
+    "sections": {
+      "personal": "Kişisel Bilgiler",
+      "social": "Sosyal Medya",
+      "profile": "Profilin",
+      "collab": "İşbirliği Tercihin",
+      "pitch": "Sana Dair"
+    },
+    "fields": {
+      "fullName": "Ad Soyad",
+      "email": "E-posta",
+      "phone": "Telefon (WhatsApp tercih edilir)",
+      "city": "Şehir",
+      "instagram": "Instagram Kullanıcı Adı",
+      "tiktok": "TikTok Kullanıcı Adı",
+      "youtube": "YouTube Kanalı",
+      "followers": "Toplam Takipçi Aralığı",
+      "engagement": "Ortalama Etkileşim Oranı",
+      "niches": "İçerik Kategorin",
+      "priorCollab": "Daha önce marka işbirliği yaptın mı?",
+      "collabTypes": "İlgilendiğin İşbirliği Türleri",
+      "pitch": "Bize Kendini Anlat",
+      "pitchPlaceholder": "Neden CAFEPASTE ile çalışmak istiyorsun? İçeriklerinde nasıl yer vermeyi düşünüyorsun? (En az 50 karakter)",
+      "mediaKit": "Medya Kit (Opsiyonel)",
+      "mediaKitHint": "PDF, JPG veya PNG · Maks 5MB",
+      "kvkk": "KVKK ve verilerimin işlenmesini kabul ediyorum."
+    },
+    "options": {
+      "follower": {
+        "1k-10k": "1.000 - 10.000",
+        "10k-50k": "10.000 - 50.000",
+        "50k-100k": "50.000 - 100.000",
+        "100k-500k": "100.000 - 500.000",
+        "500k+": "500.000+"
+      },
+      "engagement": {
+        "lt1": "%1'den az",
+        "1-3": "%1 - %3",
+        "3-5": "%3 - %5",
+        "5plus": "%5'in üzerinde",
+        "unknown": "Bilmiyorum"
+      },
+      "niches": {
+        "food": "Yemek & Kahve",
+        "lifestyle": "Lifestyle",
+        "fashion": "Moda",
+        "travel": "Seyahat",
+        "parenting": "Anne & Bebek",
+        "sports": "Spor & Fitness",
+        "tech": "Teknoloji",
+        "beauty": "Güzellik",
+        "education": "Eğitim",
+        "business": "İş & Girişimcilik",
+        "art": "Sanat & Tasarım",
+        "other": "Diğer"
+      },
+      "yes": "Evet",
+      "no": "Hayır",
+      "collab": {
+        "gift": "Ürün hediye karşılığı içerik",
+        "paid": "Ücretli içerik anlaşması",
+        "ambassador": "Uzun dönem ambassador",
+        "event": "Etkinlik / lansman"
+      }
+    },
+    "errors": {
+      "required": "Bu alan zorunlu",
+      "email": "Geçerli bir e-posta girin",
+      "pitchTooShort": "En az 50 karakter yazmalısın",
+      "pitchTooLong": "En fazla 2000 karakter",
+      "fileTooLarge": "Dosya 5MB'tan büyük olamaz",
+      "fileType": "Sadece PDF, JPG veya PNG kabul edilir",
+      "uploadFailed": "Dosya yüklenemedi, lütfen tekrar deneyin",
+      "submitFailed": "Başvurun kaydedilemedi, lütfen tekrar deneyin",
+      "kvkk": "Devam etmek için KVKK onayı gerekli"
+    },
+    "submit": "Başvuruyu Gönder",
+    "submitting": "Gönderiliyor...",
+    "uploading": "Dosya yükleniyor..."
+  },
+  "success": {
+    "title": "Başvurun Bize Ulaştı!",
+    "subtitle": "Teşekkür ederiz. Ekibimiz en geç 5 iş günü içinde seninle iletişime geçecek.",
+    "homeCta": "Ana Sayfaya Dön"
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "items": {
+      "followers": {
+        "q": "Belirli bir takipçi sayısı şartı var mı?",
+        "a": "Mikro içerik üreticilerinden büyük profillere kadar tüm seviyeleri değerlendiriyoruz. Önemli olan etkileşim kaliteni ve içerik uyumun."
+      },
+      "payment": {
+        "q": "Ücretli içerik nasıl belirleniyor?",
+        "a": "Profilin, içerik tipi, kullanım hakları ve kampanya kapsamına göre kampanya bazlı belirleniyor. İlk başvuruda hediye işbirliğiyle başlayan üreticiler için ücretli teklifler de geliyor."
+      },
+      "content": {
+        "q": "Ne tür içerikler üretiyoruz?",
+        "a": "Reels, TikTok kısa videoları, ürün entegrasyonlu içerikler ve etkinlik içerikleri başlıca formatlar."
+      },
+      "international": {
+        "q": "Yurt dışından başvurabilir miyim?",
+        "a": "Evet, özellikle Türkiye dışı pazarlara giriş yaptığımız ülkelerden başvuruları değerlendiriyoruz. Lojistik kapsamını birlikte konuşuyoruz."
+      },
+      "timeline": {
+        "q": "Cevap ne kadar sürede gelir?",
+        "a": "Tüm başvuruları en geç 5 iş günü içinde değerlendiriyoruz. Uygun bulduklarımızla detaylar için iletişime geçiyoruz."
+      }
+    }
+  },
+  "footer": {
+    "link": "Influencer İşbirliği"
+  }
+}

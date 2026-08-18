@@ -1,0 +1,103 @@
+# CAFEPASTE robots.txt
+# Strategy: explicitly allow AI search bots for citation, block training-only crawlers,
+# keep private app surface (admin/portal/payment/offer) out of indexing.
+
+# ---- Search engines ----
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ---- AI assistants (search-time citation crawlers) ----
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# ---- Social preview bots ----
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# ---- Training-only crawlers: block ----
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# ---- Default: allow public pages, block private app surface ----
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /portal
+Disallow: /portal/
+Disallow: /offer/
+Disallow: /payment/
+Disallow: /api/
+Disallow: /auth
+Disallow: /login
+Disallow: /reset-password
+Disallow: /*?token=
+Disallow: /*?session=
+
+Sitemap: https://cafepaste.com/sitemap.xml
+
+# AI content index: https://cafepaste.com/llms.txt
+# Full AI content dump: https://cafepaste.com/llms-full.txt

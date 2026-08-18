@@ -1,0 +1,122 @@
+{
+  "automation": {
+    "title": "Otomasyon Ayarları",
+    "subtitle": "Sistemdeki otomatik takip mesajlarının kurallarını yapılandırın.",
+    "save": "Kaydet",
+    "saving": "Kaydediliyor...",
+    "global": {
+      "title": "Global Otomasyon Motoru",
+      "description": "Tüm otomatik takip sistemini açar veya tamamen durdurur."
+    },
+    "scenarios": {
+      "title": "Senaryo Kuralları",
+      "offerCreated": {
+        "title": "Teklif Oluşturulduğunda WhatsApp Gönder",
+        "description": "Müşteri bir teklif oluşturduğunda, oluşturulan teklifin paylaşılabilir linki otomatik olarak müşterinin WhatsApp numarasına iletilir.",
+        "badge": "ANLIK"
+      },
+      "noOpen": {
+        "title": "Açılmayan Linkler",
+        "description": "Müşteriye teklif linki iletildi ancak linke belirtilen süre boyunca hiç tıklamadı."
+      },
+      "noOffer": {
+        "title": "Ürün/Teklif Seçmeyenler",
+        "description": "Link açıldı ancak herhangi bir cihaz seçilip teklif oluşturma safhasına ilerlenmedi."
+      },
+      "noPayment": {
+        "title": "Ödeme Adımına Geçmeyenler",
+        "description": "Cihaz seçildi (Teklif oluştu) ancak ödeme sayfası hiç başlatılmadı."
+      },
+      "paymentAbandoned": {
+        "title": "Yarım Kalan Ödemeler",
+        "description": "Ödeme başlatıldı (İframe açıldı) ancak başarıyla tamamlanmadı."
+      }
+    },
+    "delay": "Bekleme Süresi",
+    "hours": "Saat",
+    "template": {
+      "title": "Şablon Ayarları",
+      "name": "Şablon Adı (Meta Template Name)",
+      "language": "Şablon Dili",
+      "parameters": "Parametreler",
+      "addParam": "Parametre Ekle",
+      "removeParam": "Sil",
+      "selectFromList": "Onaylı şablonlardan seç",
+      "unknownTemplate": "Bilinmeyen şablon — Meta'dan sync yapın"
+    },
+    "customRules": {
+      "title": "Özel Otomasyon Kuralları",
+      "addNew": "Yeni Kural",
+      "edit": "Düzenle",
+      "delete": "Sil",
+      "noRules": "Henüz özel kural yok",
+      "startHint": "Yukarıdaki \"Yeni Kural\" butonuyla başlayın",
+      "form": {
+        "name": "Kural Adı",
+        "description": "Açıklama",
+        "triggerEvent": "Tetikleyici Event",
+        "triggerLogic": "Tetikleme Mantığı",
+        "negate": "Event GERÇEKLEŞMEDİYSE tetikle",
+        "positive": "Event GERÇEKLEŞTİYSE tetikle"
+      }
+    },
+    "kpi": {
+      "activeScenarios": "Aktif Senaryo",
+      "todaySent": "Bugün Gönderilen",
+      "todayFailed": "Bugün Hata",
+      "pendingTasks": "Bekleyen"
+    },
+    "matrix": {
+      "title": "Senaryo × Ülke Şablon Matrisi",
+      "hint": "Hücreye tıklayıp o ülkeye özel şablon adı atayabilirsiniz.",
+      "default": "(default)",
+      "scenario": "Senaryo",
+      "status": "Durum"
+    },
+    "activity": {
+      "title": "Son Aktivite",
+      "filterAll": "Tüm Durumlar",
+      "filterSent": "Gönderildi",
+      "filterFailed": "Hata",
+      "filterPending": "Bekliyor",
+      "emptyState": "Henüz aktivite yok"
+    },
+    "workingHours": {
+      "title": "Çalışma Saatleri",
+      "active": "Saat Koruması Aktif",
+      "start": "Başlangıç",
+      "end": "Bitiş"
+    },
+    "retry": {
+      "title": "Tekrar Deneme Politikası",
+      "maxRetries": "Maksimum Deneme Sayısı",
+      "delay": "Başarısızlık Sonrası Bekleme (Dakika)"
+    }
+  },
+  "whatsappTemplates": {
+    "title": "WhatsApp Şablonları",
+    "syncFromMeta": "Meta'dan Senkronize Et",
+    "syncing": "Senkronize Ediliyor...",
+    "syncSuccess": "Şablonlar senkronize edildi",
+    "status": {
+      "approved": "Onaylı",
+      "pending": "Beklemede",
+      "rejected": "Reddedildi",
+      "disabled": "Devre Dışı"
+    },
+    "category": "Kategori",
+    "paramCount": "{{count}} parametre",
+    "preview": "Önizleme",
+    "usedIn": "Otomasyonda kullanım",
+    "testSend": "Test Gönder"
+  },
+  "common": {
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "loading": "Yükleniyor...",
+    "yes": "Evet",
+    "no": "Hayır"
+  }
+}

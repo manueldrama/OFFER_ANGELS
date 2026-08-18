@@ -1,0 +1,64 @@
+{
+  "brand": "CAFEPASTE KARİYER",
+  "loading": "Yükleniyor…",
+  "welcome": "Merhaba {{name}}",
+
+  "steps": {
+    "interview": "Mülakat",
+    "offer": "İş Teklifi",
+    "personal": "Bilgiler",
+    "contract": "Sözleşme"
+  },
+
+  "stepState": {
+    "expired": "Süresi doldu",
+    "declined": "Reddedildi"
+  },
+
+  "deadline": {
+    "label": "Son tarih",
+    "daysLeft_one": "{{count}} gün kaldı",
+    "daysLeft_other": "{{count}} gün kaldı",
+    "hoursLeft_one": "{{count}} saat kaldı",
+    "hoursLeft_other": "{{count}} saat kaldı",
+    "lastHour": "son 1 saat"
+  },
+
+  "attention": {
+    "expiredTitle": "Bu adım için süre doldu",
+    "declinedTitle": "Bu adım kapandı",
+    "genericBody": "Süreç bu adımda durdu. Devam edebilmek için İK ekibimizle iletişime geçin.",
+    "expired": {
+      "interview": "Online mülakatı verilen süre içinde tamamlayamadınız. Süreç sizin için kapanmadı — İK ekibimizle iletişime geçerseniz size yeni bir süre tanımlayabiliriz.",
+      "offer": "İş teklifimizin yanıt süresi doldu. Hâlâ ilgileniyorsanız İK ekibimizle iletişime geçin; teklifi yenileyebiliriz.",
+      "contract": "Sözleşme için tanınan süre doldu. İK ekibimizle iletişime geçin."
+    },
+    "declined": {
+      "offer": "İş teklifimizi reddettiğinizi kaydettik. Fikrinizi değiştirdiyseniz İK ekibimizle iletişime geçebilirsiniz.",
+      "contract": "Sözleşmeyi imzalamadığınızı kaydettik. Sorularınız için İK ekibimizle iletişime geçebilirsiniz."
+    }
+  },
+
+  "waiting": {
+    "notStartedTitle": "Başvurunuz alındı",
+    "notStartedBody": "Başvurunuz ekibimizde değerlendiriliyor. Sıradaki adım hazır olduğunda bu sayfada görünecek — bu bağlantıyı saklayın, süreç boyunca aynı adresten takip edebilirsiniz.",
+    "inReviewTitle": "Bu adımı tamamladınız",
+    "inReviewBody": "Teşekkür ederiz. Ekibimiz değerlendirmesini tamamlayınca sıradaki adım bu sayfada açılacak. Sizi ayrıca haberdar edeceğiz."
+  },
+
+  "completed": {
+    "title": "Aramıza hoş geldiniz",
+    "body": "Tüm adımları tamamladınız. İş başlangıcınızla ilgili ayrıntılar için ekibimiz sizinle iletişime geçecek."
+  },
+
+  "closed": {
+    "title": "Başvurunuz için teşekkür ederiz",
+    "body": "Süreç bu aşamada olumlu sonuçlanmadı.",
+    "keepInTouch": "Kaydınız sistemimizde kalıyor; profilinize uygun bir pozisyon açıldığında sizinle iletişime geçeceğiz."
+  },
+
+  "error": {
+    "title": "Bağlantı açılamadı",
+    "generic": "Bu bağlantı geçersiz veya artık kullanılmıyor. İK ekibimizden güncel bağlantıyı isteyebilirsiniz."
+  }
+}

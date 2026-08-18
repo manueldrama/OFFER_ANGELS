@@ -1,0 +1,334 @@
+/* ============================================================
+   CAFEPASTE SEO — Base styles
+   ------------------------------------------------------------
+   Selective copy of design-reference/styles/base.css. The
+   important difference is that every rule is nested under
+   `.cp-blog-skin` so it cannot leak to the landing page,
+   admin panel, product detail page, etc. The SEO page
+   components (SeoContentPage, SeoIndexPage, SeoResourcesHub)
+   wrap their root with `<div className="cp-blog-skin">` and
+   that triggers the editorial styling.
+
+   What lives here:
+     • container helpers (container, container-wide, container-narrow)
+     • type primitives (.h1–.h5, .lede, .text-muted, .text-mono,
+       .eyebrow, .eyebrow--red, .eyebrow--on-dark)
+     • breadcrumbs (.crumbs)
+     • buttons (.btn, .btn--ghost, .btn--red, .btn--on-dark,
+       .btn--lg, .btn--sm, .link-arrow)
+     • chip (.chip)
+
+   What is intentionally NOT here:
+     • header / utility band / footer — they live in dedicated
+       components (BlogSiteHeader, BlogSiteFooter)
+     • router stage — React Router handles route mounting
+     • site-wide selection / focus color — kept to global to
+       avoid surprises in admin
+   ============================================================ */
+
+/* Body resets only apply when the SEO skin is mounted. The font
+   family, background and selection colour all switch over so the
+   page reads as the editorial design instead of the SaaS shell.
+   Background aligned with the main site (#FAFAFA) per user feedback;
+   --cream (#faf6ec) was creating a visual disconnect against the
+   sticky glass SiteHeader which sits on light gray. */
+.cp-blog-skin {
+    font-family: var(--font-sans);
+    font-size: var(--fs-15);
+    line-height: 1.6;
+    color: var(--text-2);
+    background: #FAFAFA;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv11", "ss01";
+}
+
+.cp-blog-skin *,
+.cp-blog-skin *::before,
+.cp-blog-skin *::after { box-sizing: border-box; }
+
+.cp-blog-skin img,
+.cp-blog-skin svg { display: block; max-width: 100%; }
+
+.cp-blog-skin button {
+    font: inherit;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+}
+
+.cp-blog-skin a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cp-blog-skin input,
+.cp-blog-skin select,
+.cp-blog-skin textarea {
+    font: inherit;
+    color: inherit;
+}
+
+.cp-blog-skin ::selection {
+    background: var(--red);
+    color: #fff;
+}
+
+.cp-blog-skin :focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ===========================================================
+   CONTAINERS
+   =========================================================== */
+.cp-blog-skin .container {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: var(--s6);
+}
+.cp-blog-skin .container-wide {
+    width: 100%;
+    max-width: var(--container-wide);
+    margin-inline: auto;
+    padding-inline: var(--s6);
+}
+.cp-blog-skin .container-narrow {
+    width: 100%;
+    max-width: var(--container-narrow);
+    margin-inline: auto;
+    padding-inline: var(--s6);
+}
+
+@media (max-width: 760px) {
+    .cp-blog-skin .container,
+    .cp-blog-skin .container-wide,
+    .cp-blog-skin .container-narrow {
+        padding-inline: var(--s4);
+    }
+}
+
+/* ===========================================================
+   TYPE PRIMITIVES
+   =========================================================== */
+.cp-blog-skin .h1,
+.cp-blog-skin .h2,
+.cp-blog-skin .h3,
+.cp-blog-skin .h4,
+.cp-blog-skin .h5 {
+    font-family: var(--font-display);
+    color: var(--text-1);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0;
+    text-wrap: balance;
+}
+.cp-blog-skin .h1 {
+    /* Sakin editorial ölçek (2026-08-06): 56px "bağırıyordu" — landing hero
+       bile 51px; makale başlığı 42px tavana çekildi. */
+    font-size: clamp(30px, 3.6vw, 42px);
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    font-weight: 700;
+}
+.cp-blog-skin .h2 {
+    /* Landing SectionTitle ölçüsü: max 36px, w700 (eskisi 40px w600 —
+       landing'den hem büyük hem ince duruyordu) */
+    font-size: clamp(20px, 3vw, 36px);
+    letter-spacing: -0.025em;
+    font-weight: 700;
+}
+.cp-blog-skin .h3 {
+    font-size: clamp(22px, 2.2vw, 28px);
+}
+.cp-blog-skin .h4 {
+    font-size: var(--fs-20);
+    letter-spacing: -0.015em;
+}
+.cp-blog-skin .h5 {
+    font-size: var(--fs-16);
+    letter-spacing: -0.01em;
+}
+
+.cp-blog-skin .lede {
+    font-size: clamp(15px, 1.1vw, 17px);
+    line-height: 1.6;
+    color: var(--text-3);
+    margin: 0;
+    max-width: 60ch;
+    text-wrap: pretty;
+}
+.cp-blog-skin .text-muted { color: var(--text-3); }
+.cp-blog-skin .text-mono { font-family: var(--font-mono); }
+
+.cp-blog-skin .eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--fs-11);
+    font-weight: 600;
+    letter-spacing: 0.2em; /* landing eyebrow: 0.2em + her zaman kırmızı */
+    text-transform: uppercase;
+    color: var(--red);
+}
+.cp-blog-skin .eyebrow--red { color: var(--red); }
+.cp-blog-skin .eyebrow--on-dark { color: var(--text-on-ink-2); }
+
+/* ===========================================================
+   BREADCRUMBS
+   =========================================================== */
+.cp-blog-skin .crumbs {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--fs-12);
+    font-weight: 500;
+    color: var(--text-3);
+    font-family: var(--font-sans);
+    letter-spacing: 0.02em;
+}
+.cp-blog-skin .crumbs a {
+    color: inherit;
+    transition: color var(--d1);
+}
+.cp-blog-skin .crumbs a:hover { color: var(--red); }
+.cp-blog-skin .crumbs__sep { color: var(--text-4); }
+.cp-blog-skin .crumbs__current {
+    color: var(--text-1);
+    font-weight: 600;
+}
+
+/* ===========================================================
+   BUTTONS
+   =========================================================== */
+.cp-blog-skin .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--fs-14);
+    font-weight: 600;
+    padding: 12px 20px;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: var(--r-sm); /* landing disiplini: 4px, flat */
+    transition: all var(--d1) var(--ease);
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none;
+}
+.cp-blog-skin .btn:hover {
+    background: var(--red);
+    border-color: var(--red);
+}
+.cp-blog-skin .btn--ghost {
+    background: transparent;
+    color: var(--ink);
+}
+.cp-blog-skin .btn--ghost:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+    box-shadow: none;
+}
+/* Canlı landing'in GERÇEK CTA dili (LandingPage.tsx PrimaryBtn): düz
+   #C41E2A, radius 4, gölgesiz; hover'da koyulaşır. Gradyan+glow varyantı
+   "AI tasarımı" hissi verdiği için kaldırıldı (2026-08-05). */
+.cp-blog-skin .btn--red {
+    background: var(--red);
+    border-color: var(--red);
+}
+.cp-blog-skin .btn--red:hover {
+    background: var(--red-hot);
+    border-color: var(--red-hot);
+}
+.cp-blog-skin .btn--on-dark {
+    border-color: var(--text-on-ink-1);
+    background: transparent;
+    color: var(--text-on-ink-1);
+}
+.cp-blog-skin .btn--on-dark:hover {
+    background: var(--text-on-ink-1);
+    color: var(--ink);
+    box-shadow: none;
+}
+.cp-blog-skin .btn--lg {
+    padding: 15px 26px;
+    font-size: var(--fs-15);
+    border-radius: var(--r-sm);
+}
+.cp-blog-skin .btn--sm {
+    padding: 8px 14px;
+    font-size: var(--fs-13);
+    border-radius: var(--r-sm);
+}
+.cp-blog-skin .btn .arrow { transition: transform var(--d1); }
+.cp-blog-skin .btn:hover .arrow { transform: translateX(3px); }
+
+.cp-blog-skin .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--fs-14);
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+    transition: all var(--d1);
+}
+.cp-blog-skin .link-arrow:hover {
+    color: var(--red);
+    border-bottom-color: var(--red);
+}
+.cp-blog-skin .link-arrow svg { transition: transform var(--d1); }
+.cp-blog-skin .link-arrow:hover svg { transform: translateX(3px); }
+
+/* ===========================================================
+   CHIP — used by tag rows in article footers + post-card meta
+   =========================================================== */
+.cp-blog-skin .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--fs-12);
+    font-weight: 500;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    background: var(--cream-soft);
+    color: var(--text-3);
+    border-radius: var(--r-sm); /* hap değil — landing badge dili 4px */
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+    transition: border-color var(--d1), background var(--d1), color var(--d1);
+}
+.cp-blog-skin a.chip:hover {
+    border-color: var(--red);
+    color: var(--red);
+}
+.cp-blog-skin .chip--active {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--text-on-ink-1);
+}
+.cp-blog-skin .chip--red {
+    background: var(--red-soft);
+    border-color: transparent;
+    color: var(--red);
+}
+
+/* ===========================================================
+   REDUCED MOTION
+   =========================================================== */
+@media (prefers-reduced-motion: reduce) {
+    .cp-blog-skin *,
+    .cp-blog-skin *::before,
+    .cp-blog-skin *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
