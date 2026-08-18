@@ -1,7 +1,7 @@
 // Creator card used in the token-gated venue directory. Dark, elegant, photo-led
 // — reads as a curated profile, not a marketplace listing.
 
-import { MapPin, Star, Instagram } from 'lucide-react';
+import { MapPin, Star, Camera } from 'lucide-react';
 import { A } from './AngelsShell';
 import type { AngelCreator } from '../../types/angels';
 
@@ -38,7 +38,7 @@ export function CreatorCard({
                     <img src={cover} alt={creator.full_name} className="w-full h-full object-cover" />
                 ) : (
                     <div className="w-full h-full flex items-center justify-center" style={{ color: A.textGhost }}>
-                        <Instagram size={28} />
+                        <Camera size={28} />
                     </div>
                 )}
                 {creator.is_featured && (
